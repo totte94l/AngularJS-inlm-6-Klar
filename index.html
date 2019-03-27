@@ -99,15 +99,15 @@
                     <label for="itemsPerPage">Items per page:</label>
                     <select name="itemsPerPage" id="itemsPerPage" class="dropDown" placeholder="Items per page" ng-model="$root.rowLimits">
                             <option value="5">5</option>
-                            <option value="10">10</option>
+                            <option value="10" selected="selected">10</option>
                             <option value="20">20</option>
                             <option value="50">50</option>
                             <option value="100">100</option>
                     </select>
                 </div>
                 <span class="gray-text">Showing 1-12 of 30 results</span>
-                <select name="filterBy" id="filterDropDown" class="dropDown" ng-controller="sortController">
-                    <option value="productsname" ng-click="sortData('productname')">Name</option>
+                <select name="filterBy" id="filterDropDown" class="dropDown" ng-controller="sortController" ng-model="$root.sortColumn">
+                    <option value="productname">Name</option>
                     <option value="price" ng-click="sortData('price')">Price</option>
                     <option value="rating" ng-click="sortData('rating')">Rating</option>
                 </select>
