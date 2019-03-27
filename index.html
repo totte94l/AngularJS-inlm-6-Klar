@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Pohat</title>
 </head>
-
 <body ng-app="shopApp">
     <header>
         <div id="topbar">
@@ -42,7 +40,6 @@
                    </select>
                     <span class="orange-bg">+46 722 3317 57</span>
                 </div>
-
             </div>
             <div id="menu-links">
                 <ul>
@@ -107,7 +104,7 @@
                 </div>
                 <span class="gray-text">Showing 1-12 of 30 results</span>
                 <select name="filterBy" id="filterDropDown" class="dropDown" ng-controller="sortController" ng-model="$root.sortColumn">
-                    <option value="productname">Name</option>
+                    <option value="productname" ng-click="sortData('productname')">Name</option>
                     <option value="price" ng-click="sortData('price')">Price</option>
                     <option value="rating" ng-click="sortData('rating')">Rating</option>
                 </select>
@@ -115,7 +112,6 @@
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Search from here.." ng-model="search">
                 </div>
-
             </div>
         </div>
         <ng-view><!-- PRODUCTS GOES HERE--></ng-view>
