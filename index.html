@@ -12,7 +12,7 @@
     <title>Pohat</title>
 </head>
 
-<body>
+<body ng-app="shopApp">
     <header>
         <div id="topbar">
             <div id="top-social">
@@ -88,174 +88,37 @@
         <div id="filter">
             <div id="view-type">
                 <span class="active">
-                   <a href="#"><img src="images/bricks.svg" alt="" class=""></a>
+                   <a href="#/!"><img src="images/bricks.svg" alt="" class=""></a>
                 </span>
                 <span class="not-active">
-                    <a href="#"><img src="images/list.svg" alt=""></a>
+                    <a href="#!list-view"><img src="images/list.svg" alt=""></a>
                 </span>
-
             </div>
             <div id="search">
                 <div class="container">
                     <label for="itemsPerPage">Items per page:</label>
                     <select name="itemsPerPage" id="itemsPerPage" class="dropDown" placeholder="Items per page">
-                            <option value="productsname">5</option>
-                            <option value="productsname">10</option>
-                            <option value="productsname">20</option>
-                            <option value="productsname">50</option>
-                            <option value="productsname">100</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
                         </select>
                 </div>
                 <span class="gray-text">Showing 1-12 of 30 results</span>
-                <select name="filterBy" id="filterDropDown" class="dropDown">
-                    <option value="productsname">Name</option>
-                    <option value="productsname">Price</option>
-                    <option value="productsname">Rating</option>
+                <select name="filterBy" id="filterDropDown" class="dropDown" ng-controller="sortController">
+                    <option value="productsname" ng-click="sortData('productname')">Name</option>
+                    <option value="price" ng-click="sortData('price')">Price</option>
+                    <option value="rating" ng-click="sortData('rating')">Rating</option>
                 </select>
                 <div class="input-container">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search from here..">
+                    <input type="text" placeholder="Search from here.." ng-model="search">
                 </div>
 
             </div>
         </div>
-        <div id="products">
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <div class="nameAndBrand">
-                    <small class="brand">Apple</small>
-                    <strong>iPhone X</strong>
-                </div>
-                <span class="orange-text">$300</span>
-                <span class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://picsum.photos/250/200/?random" alt="">
-                <strong>Product 1</strong>
-                <span class="orange-text">$300</span>
-                <span data-rating="4" class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-        </div>
+        <ng-view><!-- PRODUCTS GOES HERE--></ng-view>
         <div id="page-select-bottom">
             <ul>
                 <li><i class="fas fa-arrow-left"></i></li>
@@ -328,6 +191,15 @@
             </div>
         </div>
     </footer>
-</body>
 
+    <script src="scripts/data/products.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <!-- ANGULARJS Controllers-->
+    <script src="scripts/controllers/products.controller.js"></script>
+    <script src="scripts/controllers/search.controller.js"></script>
+    <script src="scripts/controllers/sort.controller.js"></script>
+</body>
 </html>
