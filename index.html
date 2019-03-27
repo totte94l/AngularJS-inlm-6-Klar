@@ -37,20 +37,22 @@
                     <span class="logo-text">Pohat<span class="orange-text">.</span></span>
                 </div>
                 <div id="menu-lang-phone">
-                    <span class="dropdown">EN <i class="fas fa-angle-down"></i></span>
+                   <select name="lang" id="lang" class="dropDown">
+                       <option value="EN">EN</option>
+                   </select>
                     <span class="orange-bg">+46 722 3317 57</span>
                 </div>
 
             </div>
             <div id="menu-links">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Pages</li>
-                    <li>News</li>
-                    <li>Contact</li>
-                    <li class="orange-bg">Get a QUOTE</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="orange-bg"><a href="#" style="color: white">Get a QUOTE</a></li>
                 </ul>
             </div>
         </div>
@@ -85,13 +87,26 @@
         </div>
         <div id="filter">
             <div id="view-type">
-                <img src="images/bricks.svg" alt="" class="">
-                <img src="images/list.svg" alt="">
+                <span class="active">
+                    <img src="images/bricks.svg" alt="" class="">
+                </span>
+                <span class="not-active">
+                    <img src="images/list.svg" alt="">
+                </span>
+
             </div>
             <div id="search">
                 <span class="gray-text">Showing 1-12 of 30 results</span>
-                <span class="dropdown">Sort by <i class="fas fa-angle-down"></i></span>
-                <input type="text" placeholder="Search from here..">
+                <select name="filterBy" id="filterDropDown" class="dropDown">
+                    <option value="productsname">Name</option>
+                    <option value="productsname">Price</option>
+                    <option value="productsname">Rating</option>
+                </select>
+                <div class="input-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search from here..">
+                </div>
+
             </div>
         </div>
         <div id="products">
