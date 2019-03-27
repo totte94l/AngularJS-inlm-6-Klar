@@ -88,14 +88,24 @@
         <div id="filter">
             <div id="view-type">
                 <span class="active">
-                    <img src="images/bricks.svg" alt="" class="">
+                   <a href="#"><img src="images/bricks.svg" alt="" class=""></a>
                 </span>
                 <span class="not-active">
-                    <img src="images/list.svg" alt="">
+                    <a href="#"><img src="images/list.svg" alt=""></a>
                 </span>
 
             </div>
             <div id="search">
+                <div class="container">
+                    <label for="itemsPerPage">Items per page:</label>
+                    <select name="itemsPerPage" id="itemsPerPage" class="dropDown" placeholder="Items per page">
+                            <option value="productsname">5</option>
+                            <option value="productsname">10</option>
+                            <option value="productsname">20</option>
+                            <option value="productsname">50</option>
+                            <option value="productsname">100</option>
+                        </select>
+                </div>
                 <span class="gray-text">Showing 1-12 of 30 results</span>
                 <select name="filterBy" id="filterDropDown" class="dropDown">
                     <option value="productsname">Name</option>

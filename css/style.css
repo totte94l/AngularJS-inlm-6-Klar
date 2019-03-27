@@ -272,7 +272,9 @@ body {
     margin: 5px;
 }
 
-
+#itemsPerPage {
+    width: 70px;
+}
 
 #filter {
     display: grid;
@@ -284,7 +286,7 @@ body {
 #filter #search {
     justify-self: end;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     align-items: center;
     grid-gap: 10px;
