@@ -1,5 +1,5 @@
 <div id="products" ng-controller="productsController">
-        <div class="product" ng-repeat="product in products | filter: search:wholeWord | orderBy:sortColumn:reverseSort ">
+        <div class="product" ng-repeat="product in products | filter: search:wholeWord | orderBy:sortColumn:reverseSort | limitTo: rowLimits">
             
             <img ng-src="{{ product.img }}">
             <div class="nameAndBrand">
