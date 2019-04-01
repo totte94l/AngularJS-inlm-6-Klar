@@ -11,6 +11,11 @@ var app = angular
         })
     });
 
+    app.controller('iconController', function($scope) {
+        $scope.cardActive = true;
+        console.log($scope.cardActive);
+    })
+        
 
 
 

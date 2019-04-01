@@ -401,7 +401,6 @@ body {
     width: 100%;
 
     border-bottom: 1px solid black;
-    overflow: hidden;
     grid-gap: 20px;
 }
 

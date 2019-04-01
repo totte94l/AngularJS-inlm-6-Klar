@@ -83,12 +83,12 @@
             </div>
         </div>
         <div id="filter">
-            <div id="view-type">
-                <span class="active">
-                   <a href="#/!"><img src="images/bricks.svg" alt="" class=""></a>
+            <div id="view-type" ng-controller="iconController">
+                <span id="brick-icon" ng-class="{'active': cardActive, 'not-active': !cardActive}">
+                   <a href="#/!"><img src="images/bricks.svg" alt="" ng-click="cardActive = true"></a>
                 </span>
-                <span class="not-active">
-                    <a href="#!list-view"><img src="images/list.svg" alt=""></a>
+                <span id="list-icon" ng-class="{'not-active': cardActive, 'active': !cardActive}">
+                    <a href="#!list-view"><img src="images/list.svg" alt="" ng-click="cardActive = false"></a>
                 </span>
             </div>
             <div id="search">
