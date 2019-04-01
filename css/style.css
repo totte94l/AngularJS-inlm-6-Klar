@@ -272,8 +272,17 @@ body {
     margin: 5px;
 }
 
+
+#perPageContainer {
+    grid-column: 1 / span 2;
+}
+
 #itemsPerPage {
     width: 70px;
+}
+
+#filterDropDown {
+    grid-column: 3;
 }
 
 #filter {
@@ -310,6 +319,7 @@ body {
 .input-container {
     position: relative;
     width: auto;
+    grid-column: 4;
 }
 
 .input-container i {
@@ -375,6 +385,60 @@ body {
     grid-row: 3;
     justify-self: end;
 }
+
+/* PRODUCTS LIST */
+
+#products-list {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 20px;
+}
+
+#products-list .product-list {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: auto 1fr 1fr;
+    width: 100%;
+
+    border-bottom: 1px solid black;
+    overflow: hidden;
+    grid-gap: 20px;
+}
+
+#products-list .product-list img{
+    grid-row: 1 / -1;
+    grid-column: 1;
+
+    height: 100px;
+    width: 100px;
+}
+
+#products-list .product-list small{
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#products-list .product-list strong{
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#products-list .product-list .rating-list {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+#products-list .product-list .orange-text{
+    grid-row: 4;
+    grid-column: 3;
+
+    justify-self: end;
+}
+
+
+
+
+/* -list end */
 
 #page-select-bottom {
     text-align: center;

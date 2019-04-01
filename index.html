@@ -92,7 +92,7 @@
                 </span>
             </div>
             <div id="search">
-                <div class="container" ng-controller="pageController">
+                <div  id="perPageContainer" class="container" ng-controller="pageController">
                     <label for="itemsPerPage">Items per page:</label>
                     <select name="itemsPerPage" id="itemsPerPage" class="dropDown" placeholder="Items per page" ng-model="$root.rowLimits">
                             <option value="5">5</option>
@@ -101,8 +101,8 @@
                             <option value="50">50</option>
                             <option value="100">100</option>
                     </select>
+                    <span class="gray-text">Showing 1-{{ rowLimits }} of {{ totalItems }} results</span>
                 </div>
-                <span class="gray-text">Showing 1-12 of 30 results</span>
                 <select name="filterBy" id="filterDropDown" class="dropDown" ng-controller="sortController" ng-model="$root.sortColumn">
                     <option value="productname" ng-click="sortData('productname')">Name</option>
                     <option value="price" ng-click="sortData('price')">Price</option>
