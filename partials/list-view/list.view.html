@@ -1,0 +1,12 @@
+<div id="products-list">
+    <div class="product-list" ng-repeat="product in products | orderBy: sortColumn:reverseSort | filter: searchText:wholeWord | limitTo: productsPerPage">
+        <img ng-src="{{ product.img }}">
+        <small class="brand-list">{{ product.brand }}</small>
+        <strong>{{ product.productname }}</strong>
+        <span class="orange-text">{{ product.price + ":-"}}</span>
+        <span class="rating-list">
+            <i class="fas fa-star" ng-repeat="x in [].constructor(product.rating) track by $index"></i>
+            <script>console.log($index); </script>
+        </span>
+    </div>
+</div>
