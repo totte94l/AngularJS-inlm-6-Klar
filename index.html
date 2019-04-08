@@ -84,12 +84,12 @@
         </div>
         <div id="filter">
             <div id="view-type">
-                <span id="brick-icon" class="active">
-                   <a href="#/!"><img src="images/bricks.svg" alt=""></a>
-                </span>
-                <span id="list-icon" class="not-active">
-                    <a href="#!list-view"><img src="images/list.svg" alt=""></a>
-                </span>
+                <span id="brick-icon" ng-class="{'active': cardActive, 'not-active': !cardActive}">
+                    <a href="#/!"><img src="images/bricks.svg" alt="" ng-click="cardActive = true"></a>
+                 </span>
+                 <span id="list-icon" ng-class="{'not-active': cardActive, 'active': !cardActive}">
+                     <a href="#!list-view"><img src="images/list.svg" alt="" ng-click="cardActive = false"></a>
+                 </span>
             </div>
             <div id="search">
                 <div  id="perPageContainer" class="container">
@@ -103,10 +103,10 @@
                     </select>
                     <span class="gray-text">Showing 1-10 of 10 results</span>
                 </div>
-                <select name="filterBy" id="filterDropDown" class="dropDown">
-                    <option value="productname">Name</option>
-                    <option value="price">Price</option>
-                    <option value="rating">Rating</option>
+                <select name="filterBy" id="filterDropDown" class="dropDown" ng-model="sortColumn">
+                    <option value="productname" ng-click="sortData('productname')">Name</option>
+                    <option value="price" ng-click="sortData('price')">Price</option>
+                    <option value="rating" ng-click="sortData('rating')">Rating</option>
                 </select>
                 <div class="input-container">
                     <i class="fas fa-search"></i>
