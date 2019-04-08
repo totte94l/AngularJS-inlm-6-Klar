@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Pohat</title>
 </head>
-<body>
+<body ng-app="shopApp" ng-controller="mainController">
     <header>
         <div id="topbar">
             <div id="top-social">
@@ -114,92 +114,7 @@
                 </div>
             </div>
         </div>
-        <div id="products">
-            <div class="product">
-                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
-                <div class="nameAndBrand">
-                    <small class="brand">Apple</small>
-                    <strong>iPhone</strong>
-                </div>
-                <span class="orange-text">5500 kr</span>
-                <span class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
-                <div class="nameAndBrand">
-                    <small class="brand">Apple</small>
-                    <strong>iPhone</strong>
-                </div>
-                <span class="orange-text">5500 kr</span>
-                <span class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
-                <div class="nameAndBrand">
-                    <small class="brand">Apple</small>
-                    <strong>iPhone</strong>
-                </div>
-                <span class="orange-text">5500 kr</span>
-                <span class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
-                <div class="nameAndBrand">
-                    <small class="brand">Apple</small>
-                    <strong>iPhone</strong>
-                </div>
-                <span class="orange-text">5500 kr</span>
-                <span class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
-                <div class="nameAndBrand">
-                    <small class="brand">Apple</small>
-                    <strong>iPhone</strong>
-                </div>
-                <span class="orange-text">5500 kr</span>
-                <span class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-            <div class="product">
-                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
-                <div class="nameAndBrand">
-                    <small class="brand">Apple</small>
-                    <strong>iPhone</strong>
-                </div>
-                <span class="orange-text">5500 kr</span>
-                <span class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </span>
-            </div>
-    </div>
+        <ng-view><!-- Products gets generated here --></ng-view>
         <div id="page-select-bottom">
             <ul>
                 <li><i class="fas fa-arrow-left"></i></li>
@@ -272,5 +187,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+    <script src="script/app.js"></script>
 </body>
 </html>
