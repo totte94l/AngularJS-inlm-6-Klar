@@ -101,7 +101,7 @@
                             <option value="50">50</option>
                             <option value="100">100</option>
                     </select>
-                    <span class="gray-text">Showing 1-10 of 10 results</span>
+                    <span class="gray-text">Showing 1-{{ productsPerPage }} of {{ totalProducts }} results</span>
                 </div>
                 <select name="filterBy" id="filterDropDown" class="dropDown" ng-model="sortColumn">
                     <option value="productname" ng-click="sortData('productname')">Name</option>
