@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Pohat</title>
 </head>
-<body ng-app="shopApp">
+<body>
     <header>
         <div id="topbar">
             <div id="top-social">
@@ -83,38 +83,123 @@
             </div>
         </div>
         <div id="filter">
-            <div id="view-type" ng-controller="iconController">
-                <span id="brick-icon" ng-class="{'active': cardActive, 'not-active': !cardActive}">
-                   <a href="#/!"><img src="images/bricks.svg" alt="" ng-click="cardActive = true"></a>
+            <div id="view-type">
+                <span id="brick-icon" class="active">
+                   <a href="#/!"><img src="images/bricks.svg" alt=""></a>
                 </span>
-                <span id="list-icon" ng-class="{'not-active': cardActive, 'active': !cardActive}">
-                    <a href="#!list-view"><img src="images/list.svg" alt="" ng-click="cardActive = false"></a>
+                <span id="list-icon" class="not-active">
+                    <a href="#!list-view"><img src="images/list.svg" alt=""></a>
                 </span>
             </div>
             <div id="search">
-                <div  id="perPageContainer" class="container" ng-controller="pageController">
+                <div  id="perPageContainer" class="container">
                     <label for="itemsPerPage">Items per page:</label>
-                    <select name="itemsPerPage" id="itemsPerPage" class="dropDown" placeholder="Items per page" ng-model="$root.rowLimits">
+                    <select name="itemsPerPage" id="itemsPerPage" class="dropDown" placeholder="Items per page">
                             <option value="5">5</option>
                             <option value="10" selected="selected">10</option>
                             <option value="20">20</option>
                             <option value="50">50</option>
                             <option value="100">100</option>
                     </select>
-                    <span class="gray-text">Showing 1-{{ rowLimits }} of {{ totalItems }} results</span>
+                    <span class="gray-text">Showing 1-10 of 10 results</span>
                 </div>
-                <select name="filterBy" id="filterDropDown" class="dropDown" ng-controller="sortController" ng-model="$root.sortColumn">
-                    <option value="productname" ng-click="sortData('productname')">Name</option>
-                    <option value="price" ng-click="sortData('price')">Price</option>
-                    <option value="rating" ng-click="sortData('rating')">Rating</option>
+                <select name="filterBy" id="filterDropDown" class="dropDown">
+                    <option value="productname">Name</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
                 </select>
                 <div class="input-container">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search from here.." ng-model="search">
+                    <input type="text" placeholder="Search from here..">
                 </div>
             </div>
         </div>
-        <ng-view><!-- PRODUCTS GOES HERE--></ng-view>
+        <div id="products">
+            <div class="product">
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
+                <div class="nameAndBrand">
+                    <small class="brand">Apple</small>
+                    <strong>iPhone</strong>
+                </div>
+                <span class="orange-text">5500 kr</span>
+                <span class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <div class="product">
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
+                <div class="nameAndBrand">
+                    <small class="brand">Apple</small>
+                    <strong>iPhone</strong>
+                </div>
+                <span class="orange-text">5500 kr</span>
+                <span class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <div class="product">
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
+                <div class="nameAndBrand">
+                    <small class="brand">Apple</small>
+                    <strong>iPhone</strong>
+                </div>
+                <span class="orange-text">5500 kr</span>
+                <span class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <div class="product">
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
+                <div class="nameAndBrand">
+                    <small class="brand">Apple</small>
+                    <strong>iPhone</strong>
+                </div>
+                <span class="orange-text">5500 kr</span>
+                <span class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <div class="product">
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
+                <div class="nameAndBrand">
+                    <small class="brand">Apple</small>
+                    <strong>iPhone</strong>
+                </div>
+                <span class="orange-text">5500 kr</span>
+                <span class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <div class="product">
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1550795429263">
+                <div class="nameAndBrand">
+                    <small class="brand">Apple</small>
+                    <strong>iPhone</strong>
+                </div>
+                <span class="orange-text">5500 kr</span>
+                <span class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+    </div>
         <div id="page-select-bottom">
             <ul>
                 <li><i class="fas fa-arrow-left"></i></li>
@@ -147,20 +232,20 @@
             <div id="footer-links">
                 <h4>More Links<span class="orange-text">.</span></h4>
                 <ul id="links-left" class="gray-text">
-                    <li>Paid SEO</li>
-                    <li>Digital Marketing</li>
-                    <li>Strategy planning</li>
-                    <li>Offline SEO</li>
-                    <li>Page Rank Up</li>
-                    <li>User Panel</li>
+                    <li><a href="#">Paid SEO</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Strategy planning</a></li>
+                    <li><a href="#">Offline SEO</a></li>
+                    <li><a href="#">Page Rank Up</a></li>
+                    <li><a href="#">User Panel</a></li>
                 </ul>
                 <ul id="links-right" class="gray-text">
-                    <li>Services</li>
-                    <li>Our Team</li>
-                    <li>News</li>
-                    <li>Shop</li>
-                    <li>Contact Us</li>
-                    <li>Book Appointment</li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Book Appointment</a></li>
                 </ul>
             </div>
             <div id="footer-news">
@@ -187,16 +272,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="scripts/data/products.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
-    <script src="scripts/app.js"></script>
-
-    <!-- ANGULARJS Controllers-->
-    <script src="scripts/controllers/products.controller.js"></script>
-    <script src="scripts/controllers/search.controller.js"></script>
-    <script src="scripts/controllers/sort.controller.js"></script>
-    <script src="scripts/controllers/page.controller.js"></script>
 </body>
 </html>

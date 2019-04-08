@@ -345,8 +345,9 @@ body {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
     justify-items: center;
-    grid-gap: 10px;
+    grid-gap: 0px;
     margin-bottom: 25px;
+    grid-row-gap: 50px;
 }
 
 .product {
@@ -539,6 +540,12 @@ footer {
     grid-column: 1;
     grid-row: 1;
     align-self: center;
+    text-decoration: none;
+}
+
+#footer-links a{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #links-left, #links-right {
