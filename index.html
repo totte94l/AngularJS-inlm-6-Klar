@@ -94,12 +94,7 @@
             <div id="search">
                 <div  id="perPageContainer" class="container">
                     <label for="productsPerPage">Items per page:</label>
-                    <select name="productsPerPage" id="productsPerPage" class="dropDown" ng-model="productsPerPage">
-                            <option value="5">5</option>
-                            <option value="10" selected="selected">10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
+                    <select name="productsPerPage" id="productsPerPage" class="dropDown" ng-model="productsPerPage" ng-options="option.value as option.name for option in options">
                     </select>
                     <span class="gray-text">Showing 1-{{ productsPerPage }} of {{ totalProducts }} results</span>
                 </div>

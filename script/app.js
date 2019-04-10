@@ -14,6 +14,7 @@ var app = angular
         $scope.products = products;
 
         /* Products per page values */
+        $scope.options = [{value: 5, name: "5"},{value: 10, name: "10"},{value: 20, name: "20"},{value: 50, name: "50"},{value: 100, name: "100"}];
         $scope.productsPerPage = 10; // Sets the default value for products per page.
         $scope.totalProducts = $scope.products.length;
 

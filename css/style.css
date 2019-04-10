@@ -337,6 +337,10 @@ body {
     font-size: 0.8em;
 }
 
+#productsPerPage {
+    width: 80px;
+}
+
 .rating {
     color: rgb(250, 246, 29);
 }
