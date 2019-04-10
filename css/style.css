@@ -434,6 +434,12 @@ body {
 
     justify-self: end;
 }
+.list-rating {
+    color: rgb(250, 246, 29);
+    grid-column: 2;
+    grid-row: 3;
+}
+
 
 
 
@@ -626,4 +632,8 @@ margin-bottom: 40px;
     justify-self: end;
     align-self: center;
     padding: 0;
+}
+
+.gray {
+    color: #beb3af;
 }
