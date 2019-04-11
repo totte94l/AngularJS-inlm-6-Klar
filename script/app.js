@@ -1,40 +1,50 @@
 var app = angular
     .module('shopApp', ['ngRoute'])
-    .config(function($routeProvider) {
+    .config(function ($routeProvider) {
         $routeProvider.when("/", {
-            templateUrl : "partials/card-view/card.view.html"
+            templateUrl: "partials/card-view/card.view.html"
         })
-        .when("/list-view", {
-            templateUrl: "partials/list-view/list.view.html"
-        })
+            .when("/list-view", {
+                templateUrl: "partials/list-view/list.view.html"
+            })
+    })
+    .factory("productsService", function ($http) {
+        return {
+            products: function () {
+                return $http.get("http://localhost:5000/api/products").then(function (response) {
+                    return response.data;
+                });
+            }
+        }
     })
 
-   .controller('mainController', function($scope) {
-        // Adds all products to the scope from products.js
-        $scope.products = products;
+    .controller('mainController', function ($scope, productsService) {
 
-        /* Products per page values */
-        $scope.options = [{value: 5, name: "5"},{value: 10, name: "10"},{value: 20, name: "20"},{value: 50, name: "50"},{value: 100, name: "100"}];
-        $scope.productsPerPage = 10; // Sets the default value for products per page.
-        $scope.totalProducts = $scope.products.length;
+        productsService.products().then(function (data) {
+            $scope.products = data;
 
-        /* Sorting */
-        $scope.sortColumn = "productname"; //Default sorting type
-        $scope.reverseSort = false;
+            /* Products per page values */
+            $scope.options = [{ value: 5, name: "5" }, { value: 10, name: "10" }, { value: 20, name: "20" }, { value: 50, name: "50" }, { value: 100, name: "100" }];
+            $scope.productsPerPage = 10; // Sets the default value for products per page.
+            $scope.totalProducts = $scope.products.length;
 
-        $scope.sortData = function(column) {
-            $scope.reverseSort = ( $scope.sortColumn == column ) ? !$scope.reverseSort : false;
-            $scope.sortColumn = column;
-        }
+            /* Sorting */
+            $scope.sortColumn = "productname"; //Default sorting type
+            $scope.reverseSort = false;
 
-        /* View icon (card or list) */
-        $scope.cardActive = true; 
+            $scope.sortData = function (column) {
+                $scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
+                $scope.sortColumn = column;
+            }
 
-        $scope.number = 5;
-        $scope.getNumber = function(num) {
-            return new Array(num);   
-        }
+            /* View icon (card or list) */
+            $scope.cardActive = true;
 
+            $scope.number = 5;
+            $scope.getNumber = function (num) {
+                return new Array(num);
+            }
+        });
     })
 
 
