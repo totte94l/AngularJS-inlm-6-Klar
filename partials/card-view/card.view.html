@@ -1,3 +1,7 @@
+<div id="filter" ng-include="filterComponent">
+<!-- Filter code comes here -->
+</div>
+
 <div id="products">
     <div class="product" ng-repeat="product in products | orderBy: sortColumn:reverseSort | filter: searchText:wholeWord | limitTo: productsPerPage">
         <img ng-src="{{ product.img }}">

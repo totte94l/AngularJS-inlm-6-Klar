@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="shopApp" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +10,18 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Pohat</title>
 </head>
-<body ng-app="shopApp" ng-controller="mainController">
+<body ng-controller="mainController">
     <header>
         <div id="topbar">
             <div id="top-social">
                 <ul>
-                    <li><i class="fab fa-facebook-f"></i></li>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-behance"></i></li>
-                    <li><i class="fab fa-pinterest"></i></li>
-                    <li><i class="fab fa-youtube"></i></li>
-                    <li>FAQ</li>
-                    <li>TERMS</li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">TERMS</a></li>
                 </ul>
             </div>
             <div id="top-contact">
@@ -49,6 +49,7 @@
                     <li><a href="#">Pages</a></li>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Contact</a></li>
+                    <li><a href="#!/login">Log in</a></li>
                     <li class="orange-bg"><a href="#" style="color: white">Get a QUOTE</a></li>
                 </ul>
             </div>
@@ -82,34 +83,9 @@
                 <small class="gray-text">Granted</small>
             </div>
         </div>
-        <div id="filter">
-            <div id="view-type">
-                <span id="brick-icon" ng-class="{'active': cardActive, 'not-active': !cardActive}">
-                    <a href="#/!"><img src="images/bricks.svg" alt="" ng-click="cardActive = true"></a>
-                 </span>
-                 <span id="list-icon" ng-class="{'not-active': cardActive, 'active': !cardActive}">
-                     <a href="#!list-view"><img src="images/list.svg" alt="" ng-click="cardActive = false"></a>
-                 </span>
-            </div>
-            <div id="search">
-                <div  id="perPageContainer" class="container">
-                    <label for="productsPerPage">Items per page:</label>
-                    <select name="productsPerPage" id="productsPerPage" class="dropDown" ng-model="productsPerPage" ng-options="option.value as option.name for option in options">
-                    </select>
-                    <span class="gray-text">Showing 1-{{ productsPerPage }} of {{ totalProducts }} results</span>
-                </div>
-                <select name="filterBy" id="filterDropDown" class="dropDown" ng-model="sortColumn">
-                    <option value="productname" ng-click="sortData('productname')">Name</option>
-                    <option value="price" ng-click="sortData('price')">Price</option>
-                    <option value="rating" ng-click="sortData('rating')">Rating</option>
-                </select>
-                <div class="input-container">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search from here.." ng-model="searchText">
-                </div>
-            </div>
-        </div>
+        
         <ng-view><!-- Products gets generated here --></ng-view>
+
         <div id="page-select-bottom">
             <ul>
                 <li><i class="fas fa-arrow-left"></i></li>
@@ -119,6 +95,7 @@
                 <li>04</li>
                 <li><i class="fas fa-arrow-right"></i></li>
             </ul>
+            <button ng-click="clearCredentials()"> hej</button>
         </div>
     </section>
     <footer>
@@ -184,6 +161,18 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
     <script src="script/app.js"></script>
+
+    <script src="services/dialog.service.js"></script>
+    <script src="services/user.service.js"></script>
+    <script src="services/auth.service.js"></script>
+
+    <script src="partials/login/login.controller.js"></script>
+    <script src="partials/register/register.controller.js"></script>
+    <script src="partials/home/home.controller.js"></script>
+
 </body>
 </html>
