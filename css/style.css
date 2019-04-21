@@ -694,3 +694,54 @@ footer {
         cursor: pointer;
     }
   }
+
+
+
+  /* Login and Register */
+  #login {
+    margin-bottom: 20px;
+  }
+
+  #login form {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-gap: 10px;
+  }
+
+  #login form #login-email,
+  #login form #login-password  {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      text-align: center;
+      align-items: center;
+  }
+
+  #login form input {
+    border: 0.5px solid rgba(0, 0, 0, 0.1); 
+    border-radius: 25px;
+    padding: 10px;
+    color: rgb(153, 153, 153);
+    font-size: 0.8em;
+  }
+
+  #login-button {
+      border: none;
+      background: #ff8155;
+      border-radius: 25px;
+      width: 100px; 
+      height: 30px;
+      color: white;
+      cursor: pointer;
+  }
+
+  #register-link {
+    border: none;
+    border-radius: 25px;
+    width: 100px; 
+    height: 30px;
+    color: #ff8155;
+    cursor: pointer;
+    text-decoration: none;
+
+  }

@@ -1,25 +1,25 @@
 <div id="view-type">
-    <span id="brick-icon" ng-class="{'active': cardActive, 'not-active': !cardActive}">
-        <a href="#/!"><img src="images/bricks.svg" alt="" ng-click="cardActive = true"></a>
+    <span id="brick-icon" ng-class="{'active': $parent.cardActive, 'not-active': !$parent.cardActive}">
+        <a href="#/!"><img src="images/bricks.svg" alt="" ng-click="$parent.cardActive = true"></a>
         </span>
-        <span id="list-icon" ng-class="{'not-active': cardActive, 'active': !cardActive}">
-            <a href="#!list-view"><img src="images/list.svg" alt="" ng-click="cardActive = false"></a>
+        <span id="list-icon" ng-class="{'not-active': $parent.cardActive, 'active': !$parent.cardActive}">
+            <a href="#!list-view"><img src="images/list.svg" alt="" ng-click="$parent.cardActive = false"></a>
         </span>
 </div>
 <div id="search">
     <div  id="perPageContainer" class="container">
         <label for="productsPerPage">Items per page:</label>
-        <select name="productsPerPage" id="productsPerPage" class="dropDown" ng-model="productsPerPage" ng-options="option.value as option.name for option in options">
+        <select name="productsPerPage" id="productsPerPage" class="dropDown" ng-model="$parent.productsPerPage" ng-options="option.value as option.name for option in options">
         </select>
         <span class="gray-text">Showing 1-{{ productsPerPage }} of {{ totalProducts }} results</span>
     </div>
-    <select name="filterBy" id="filterDropDown" class="dropDown" ng-model="sortColumn">
-        <option value="productname" ng-click="sortData('productname')">Name</option>
-        <option value="price" ng-click="sortData('price')">Price</option>
-        <option value="rating" ng-click="sortData('rating')">Rating</option>
+    <select name="filterBy" id="filterDropDown" class="dropDown" ng-model="$parent.sortColumn">
+        <option value="productname" ng-click="$parent.sortData('productname')">Name</option>
+        <option value="price" ng-click="$parent.sortData('price')">Price</option>
+        <option value="rating" ng-click="$parent.sortData('rating')">Rating</option>
     </select>
     <div class="input-container">
         <i class="fas fa-search"></i>
-        <input type="text" placeholder="Search from here.." ng-model="searchText">
+        <input type="text" placeholder="Search from here.." ng-model="$parent.searchText">
     </div>
 </div>

@@ -46,14 +46,20 @@ var app = angular
         $rootScope.$on("$locationChangeStart", function(event, next, current) {
             var restrictedPage = $.inArray($location.path(), ["/", "/login", "/register"]) === -1;
             
+
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path("/login");
             }
+/* 
+            if(restrictedPage && loggedIn) {
+                $location.path("/");
+            } */
+
         })
     }
 
-    app.controller('mainController', function ($scope, productsService) {
+    app.controller('mainController', function ($scope, $rootScope, productsService) {
         // Compontent
         $scope.filterComponent = "../partials/filter/filter.view.html";
 
@@ -61,7 +67,6 @@ var app = angular
         productsService.products().then(function (data) {
             $scope.products = data;
         });
-
             /* Products per page values */
             $scope.options = [{ value: 5, name: "5" }, { value: 10, name: "10" }, { value: 20, name: "20" }, { value: 50, name: "50" }, { value: 100, name: "100" }];
             $scope.productsPerPage = 10; // Sets the default value for products per page.
