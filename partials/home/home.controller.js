@@ -48,7 +48,6 @@
         } else {
             $location.path("/login");
         }
-        
     }
 
 })();

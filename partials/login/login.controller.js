@@ -22,12 +22,11 @@
                         }
                     })               
             }
-    
+            
             (function initController() {
                 authService.ClearCredentials();
             })();
     
             vm.login = login;
     }
-
 })();

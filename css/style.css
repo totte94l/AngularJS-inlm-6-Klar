@@ -710,22 +710,43 @@ footer {
   }
 
   #login form #login-email,
-  #login form #login-password  {
+  #login form #login-password{
       display: grid;
       grid-template-rows: repeat(2, 1fr);
       text-align: center;
       align-items: center;
   }
 
-  #login form input {
+  #register form {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 10px;
+}
+
+  #register form #register-firstName,
+  #register form #register-lastName,
+  #register form #register-email,
+  #register form #register-password {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      text-align: center;
+      align-items: center;
+  }
+
+
+  #login form input,
+  .input  {
     border: 0.5px solid rgba(0, 0, 0, 0.1); 
     border-radius: 25px;
     padding: 10px;
     color: rgb(153, 153, 153);
     font-size: 0.8em;
+    text-align: center;
   }
 
-  #login-button {
+  .login-button {
       border: none;
       background: #ff8155;
       border-radius: 25px;
@@ -735,7 +756,7 @@ footer {
       cursor: pointer;
   }
 
-  #register-link {
+  .register-link {
     border: none;
     border-radius: 25px;
     width: 100px; 
