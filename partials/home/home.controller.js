@@ -7,7 +7,7 @@
     homeController.$inject = ["userService", "$rootScope", "$location", "$scope"];
     function homeController(userService, $rootScope, $location, $scope) {
 
-        $scope.logOut = function(){
+        $rootScope.logOut = function(){
             $rootScope.globals.currentUser = undefined;
             $location.path("/login");
         }

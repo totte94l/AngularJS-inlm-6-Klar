@@ -49,8 +49,8 @@
                     <li><a href="#">Pages</a></li>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li ng-hide="!$root.isLoggedIn"><a href="#!/login">Log in</a></li>
-                    <li ng-hide="$root.isLoggedIn"><a href="#">Log out</a></li>
+                    <li ng-hide="$root.isLoggedIn()"><a href="#!/login">Log in</a></li>
+                    <li ng-hide="!$root.isLoggedIn()"><span ng-click="logOut()">Logout</span></li>
                     <li class="orange-bg"><a href="#" style="color: white">Get a QUOTE</a></li>
                 </ul>
             </div>

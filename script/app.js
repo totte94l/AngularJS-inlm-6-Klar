@@ -45,18 +45,10 @@ var app = angular
 
         $rootScope.$on("$locationChangeStart", function(event, next, current) {
             var restrictedPage = $.inArray($location.path(), ["/login", "/register", "/#"]) === -1;
-            
-            $rootScope.isLoggedIn = function() {
-                if ( loggedIn == undefined ) {
-                    return false;
-                } else {
-                    return true;
-                }
-            } 
-            console.log($location.path());
+            var loggedIn = $rootScope.globals.currentUser;
+            $rootScope.loggedIn = $rootScope.globals.currentUser;
 
             $rootScope.isLoggedIn();
-            var loggedIn = $rootScope.globals.currentUser;
 
             if ($location.path == restrictedPage && !loggedIn) {
                 $location.path("/login");  
@@ -75,6 +67,13 @@ var app = angular
     }
 
     app.controller('mainController', function ($scope, $rootScope, productsService) {
+        $rootScope.isLoggedIn = function() {
+            if ( $rootScope.loggedIn == undefined ) {
+                return false;
+            } else {
+                return true;
+            }
+        } 
 
         // Compontent
         $scope.filterComponent = "../partials/filter/filter.view.html";
