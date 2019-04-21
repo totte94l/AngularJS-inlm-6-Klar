@@ -195,7 +195,7 @@ body {
 
 #menu-links ul li a {
     text-decoration: none;
-    color: black;
+    color: black;   
 }
 
 #menu-links ul .orange-bg {
@@ -723,6 +723,7 @@ footer {
     justify-content: center;
     align-content: center;
     grid-gap: 10px;
+    margin-bottom: 20px;    
 }
 
   #register form #register-firstName,
@@ -764,5 +765,59 @@ footer {
     color: #ff8155;
     cursor: pointer;
     text-decoration: none;
+  }
 
+  /* Home */
+
+  #greeting {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      background: #ff8155;
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+  }
+
+  #greeting h1 {
+      justify-self: start;
+      align-self: center;
+  }
+
+  #greeting button {
+    justify-self: end;
+    align-self: center;
+
+    border: none;
+    width: 150px;
+    height: 50px;
+    background: #d25151;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+  }
+
+  #users {
+    background: rgba(0, 72, 255, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 80px;
+  }
+
+  #users table {
+
+      border: none;
+      width: 100%;
+
+  }
+
+  #users table th {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      text-align: start;
+  }
+
+  #remove-user {
+      color: rgb(194, 51, 51);
+      cursor: pointer;
   }
