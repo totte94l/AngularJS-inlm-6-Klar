@@ -12,6 +12,7 @@
         <span class="rating">
             <i class="fas fa-star" ng-repeat="x in [].constructor(product.rating) track by $index"></i><i class="fas fa-star gray" ng-repeat="x in [].constructor(5 - product.rating) track by $index"></i>
         </span>
+        <button ng-click="addItem(product)">Add to cart <i class="fas fa-shopping-bag"></i></button>
     </div>
 </div>
 <div id="page-select-bottom">

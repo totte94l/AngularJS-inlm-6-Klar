@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://underscorejs.org/underscore.js"></script>
     <title>Pohat</title>
 </head>
 <body ng-controller="mainController">
@@ -51,7 +52,26 @@
                     <li><a href="#">Contact</a></li>
                     <li ng-hide="$root.isLoggedIn()"><a href="#!/login">Log in</a></li>
                     <li ng-hide="!$root.isLoggedIn()"><span ng-click="logOut()">Logout</span></li>
-                    <li class="orange-bg"><a href="#" style="color: white">Get a QUOTE</a></li>
+                    <!-- Shopping cart -->
+                    <li id="cart-li" ng-click="toggleCart()"><i class="fas fa-shopping-cart"></i>Cart ({{ getQuantity() }})
+                        <div id="shopping-cart">
+                            <div id="cart-info">
+                                <span>Shopping cart.</span>
+                                {{ emptyCart }}
+                                <hr>   
+                            </div>
+                            <table id="shopping-cart-products">
+                                <tr ng-repeat="product in cart">
+                                    <td>{{product.quantity}} x {{ product.productname }}</td>
+                                    <td>{{getProductCost(product)}} :-</td>
+                                    <td><button class="remove-item" ng-click="removeItem(product)"><i class="fas fa-trash-alt"></i></button></td>
+                                </tr>
+                            </table>
+                            <h4>Total: {{ getTotal() }} SEK</h4>
+                            <span ng-hide="$root.isLoggedIn()"><a class="orange-text" href="#!/login">Login</a> or <a href="#!/register" class="orange-text"> Register </a>to continue</span>
+                            <button ng-hide="!$root.isLoggedIn()" class="checkout-button">Go to checkout <i class="fas fa-money-check"></i></button>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
