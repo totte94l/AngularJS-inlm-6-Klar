@@ -190,8 +190,3 @@ var app = angular
         return quantity;
     }
     })
-
-
-
-
-
