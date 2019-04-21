@@ -44,22 +44,38 @@ var app = angular
         }
 
         $rootScope.$on("$locationChangeStart", function(event, next, current) {
-            var restrictedPage = $.inArray($location.path(), ["/", "/login", "/register"]) === -1;
+            var restrictedPage = $.inArray($location.path(), ["/login", "/register", "/#"]) === -1;
             
+            $rootScope.isLoggedIn = function() {
+                if ( loggedIn == undefined ) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } 
+            console.log($location.path());
 
+            $rootScope.isLoggedIn();
             var loggedIn = $rootScope.globals.currentUser;
-            if (restrictedPage && !loggedIn) {
-                $location.path("/login");
-            }
-/* 
-            if(restrictedPage && loggedIn) {
-                $location.path("/");
-            } */
 
+            if ($location.path == restrictedPage && !loggedIn) {
+                $location.path("/login");  
+                console.log($location.path());
+            } 
+
+            if($location.path == "/home" && !loggedIn) {
+                console.log($location.path());
+                console.log("BAHHS");
+                $location.path("/login");
+            } 
+
+
+            console.log(loggedIn);
         })
     }
 
     app.controller('mainController', function ($scope, $rootScope, productsService) {
+
         // Compontent
         $scope.filterComponent = "../partials/filter/filter.view.html";
 
