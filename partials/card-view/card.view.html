@@ -1,5 +1,26 @@
+<div id="shop-info">
+    <div id="info-shipping" class="info-box">
+        <img src="images/shipping.svg" alt="">
+        <h5>Free Shipping</h5>
+        <small class="gray-text">Orders over $100</small>
+    </div>
+    <div id="info-returns" class="info-box">
+        <img src="images/return.svg" alt="">
+        <h5>Free Returns</h5>
+        <small class="gray-text">In 30 Days</small>
+    </div>
+    <div id="info-secure" class="info-box">
+        <img src="images/secure.svg" alt="">
+        <h5>100% Secure</h5>
+        <small class="gray-text">Shipping</small>
+    </div>
+    <div id="info-price" class="info-box">
+        <img src="images/price.svg" alt="">
+        <h5>Best Price</h5>
+        <small class="gray-text">Granted</small>
+    </div>
+</div>
 <div id="filter" ng-include="filterComponent">
-<!-- Filter code comes here -->
 </div>
 <div id="products">
     <div class="product" ng-repeat="product in products | orderBy: sortColumn:reverseSort | filter: searchText:wholeWord | limitTo: productsPerPage">
